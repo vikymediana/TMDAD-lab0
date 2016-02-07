@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.2.1.RELEASE'
+        springBootVersion = '1.3.2.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -17,12 +17,9 @@ apply plugin: 'spring-boot'
 apply plugin: 'war'
 
 war {
-    baseName 'lab0'
-    version = '2015.02.28'
+    baseName = 'lab0'
+    version = '2016'
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -30,6 +27,10 @@ repositories {
 
 configurations {
     providedRuntime
+}
+
+bootRepackage {
+    mainClass = 'es.unizar.tmdad.lab0.Application'
 }
 
 dependencies {
